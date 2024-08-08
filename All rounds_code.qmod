@@ -1,0 +1,50 @@
+qfunc apply_rotations_1_ctrl(N: int, i: int, ctrl: qbit, y: qbit[]) {
+  control (ctrl) {
+    repeat (k: y.len) {
+      PHASE(((2 * pi) * (2 ** ((2 * i) + k))) / N, y[k]);
+    }
+  }
+}
+
+qfunc apply_rotations_2_ctrl(N: int, i: int, j: int, ctrl1: qbit, ctrl2: qbit, y: qbit[]) {
+  ctrl: qbit[];
+  {ctrl1, ctrl2} -> ctrl;
+  control (ctrl) {
+    repeat (k: y.len) {
+      PHASE(((4 * pi) * (2 ** ((i + j) + k))) / N, y[k]);
+    }
+  }
+  ctrl -> {ctrl1, ctrl2};
+}
+
+qfunc modular_square(N: int, x: qbit[], y: qbit[]) {
+  hadamard_transform(y);
+  repeat (i: x.len) {
+    apply_rotations_1_ctrl(N, i, x[i], y);
+  }
+  repeat (i: x.len) {
+    repeat (j: (x.len - i) - 1) {
+      apply_rotations_2_ctrl(N, i, (i + j) + 1, x[i], x[(i + j) + 1], y);
+    }
+  }
+  invert {
+    qft(y);
+  }
+}
+
+qfunc round2_entagle(i: int, r: int, x: qbit[], auxiliary: qbit) {
+  control (x[i]) {
+    X(auxiliary);
+  }
+}
+
+qfunc main(output x: qnum, output y: qnum, output auxiliary: qnum) {
+  allocate(4, x);
+  allocate_num(4, False, 4, y);
+  allocate(1, auxiliary);
+  hadamard_transform(x);
+  modular_square(10, x, y);
+  round2_entagle(2, [0, 0, 1, 0], x, auxiliary);
+  hadamard_transform(x);
+  RY(0.7854, auxiliary);
+}
