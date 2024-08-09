@@ -10,6 +10,7 @@ A CHSH-type Bell inequality measurement is performed, with the result being cryp
 # OPTIMIZATION AND RESULTS 
 ## Quantum Circuit Simulation
 The quantum circuits were simulated using the Classiq Python SDK, which enabled a comparison of circuit depth and width across several hardware simulators.
+![newplot (6)](https://github.com/user-attachments/assets/cfbc973b-e3eb-4d45-8bbb-492a7b38fa65)
 
 ## Optimization and Hardware Simulation
 The circuits were optimized for depth, with a constraint of using more than 50 qubits for simulation on the Azure Quantum simulator. The synthesized circuit requires a depth of 255 levels on the Azure Quantum IonQ hardware simulator.
