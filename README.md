@@ -16,6 +16,4 @@ The quantum circuits were simulated using the Classiq Python SDK, which enabled 
 The circuits were optimized for depth, with a constraint of using more than 50 qubits for simulation on the Azure Quantum simulator. The synthesized circuit requires a depth of 255 levels on the Azure Quantum IonQ hardware simulator.
 
 ## Team Members:
-Apurva Dhingra 
-Barnokhon Tashpulotova
-Kush Dhuvad
+Apurva Dhingra , Barnokhon Tashpulotova , Kush Dhuvad
