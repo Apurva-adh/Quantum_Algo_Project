@@ -18,6 +18,6 @@ The circuits were optimized for depth, with a constraint of using more than 50 q
 ## Team Members:
 Apurva Dhingra - WQ24-6oabUGzqgbUzIJP
 
-Barnokhon Tashpulotova - 
+Barnokhon Tashpulotova - WQ24-W7QCmEneSHAvXg3
 
 Kush Dhuvad - 
