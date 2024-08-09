@@ -1,5 +1,6 @@
 # Quantum_Algo_Project
-The project focuses on the implementation of quantum cryptographic quantum protocol alogoritm. This quantum project utilizes trapdoor claw-free functions based on Rabin's function and the Diffie_Hellman problem. The implementation consists of three rounds of interaction between a quantum prover and a classical verifier. 
+The project focuses on the implementation of quantum cryptographic quantum protocol alogoritm. This quantum project utilizes trapdoor claw-free functions based on Rabin's function and the Diffie_Hellman problem. We implemented only Rabin's fucntion. The implementation consists of three rounds of interaction between a quantum prover and a classical verifier. 
+
 ### The first round 
 A multi-qubit superposition is generated over two bitstrings, which are cryptographically challenging to compute classically. 
 ### The second round 
